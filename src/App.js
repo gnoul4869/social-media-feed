@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 
 import { Navbar } from './app/Navbar';
 import { AddPostForm } from './features/posts/AddPostForm';
+import { EditPostForm } from './features/posts/EditPostForm';
 import { PostsList } from './features/posts/PostsList';
+import { SinglePostPage } from './features/posts/SinglePostPage';
 
 function App() {
     return (
@@ -21,6 +23,8 @@ function App() {
                             </React.Fragment>
                         )}
                     />
+                    <Route exact path="/posts/:postID" component={SinglePostPage} />
+                    <Route exact path="/edit-posts/:postID" component={EditPostForm} />
                     <Redirect to="/" />
                 </Switch>
             </div>
